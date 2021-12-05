@@ -1,0 +1,79 @@
+﻿@model FShop.Models.Hang
+
+@{
+    ViewBag.Title = "Chi tiết";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Sản phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nha_CC.TenNCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nha_CC.TenNCC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LuongCo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LuongCo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChietKhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChietKhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhAnh)
+        </dt>
+
+        <dd>
+            @{
+                string ImagePath = "~/wwwroot/HangImages/" + Model.HinhAnh;
+            }
+            <img src="@Url.Content(ImagePath)" width="300" class="img-thumbnail" />
+            <br />
+            @Html.DisplayFor(model => model.HinhAnh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaHang.Trim() }) |
+    @Html.ActionLink("Trở về", "Index")
+</p>
